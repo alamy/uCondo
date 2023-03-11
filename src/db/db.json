@@ -1,0 +1,9 @@
+[
+    {
+     "codigo": "1",
+     "nome_da_conta": "Receitas",
+     "tipo": "Receita",
+     "aceita_Lançamentos": "Não"
+    }
+
+]

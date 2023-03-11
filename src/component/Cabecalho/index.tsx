@@ -3,15 +3,14 @@ import React from 'react';
 import { cabecalho } from './style';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+
  const Cabecalho = () => {
   const [text, onChangeText] = React.useState('Useless Text');
   const [number, onChangeNumber] = React.useState('');
+ 
+
   return (
     <View>
-      <View>
-        <Text style={cabecalho.titulo}>Plano de Contas</Text>
-        <Ionicons style={cabecalho.plus} name="add-outline" size={32} color="#fff" />
-      </View>
       <View style={cabecalho.input}>
       <Ionicons style={cabecalho.lupa} name="search-outline" size={22} color="#C4C4D1" />
        <TextInput

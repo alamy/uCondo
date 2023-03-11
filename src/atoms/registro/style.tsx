@@ -8,11 +8,7 @@ export const resgitros = StyleSheet.create({
        padding:13
     },
     text: {
-        fontSize:20,
-        alignSelf: 'flex-start',
-        color: '#1BA803',
-        fontFamily: 'Roboto',
-
+        alignSelf: 'flex-start'
     },
     icon: {
         alignSelf: 'flex-end',

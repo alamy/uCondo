@@ -7,7 +7,6 @@ export const corpo = StyleSheet.create({
         backgroundColor: '#F0EDF5',
         with:'100%',
         borderRadius: 30,
-        height:'100vh',
         paddingTop:40,
     },
     delete: {
