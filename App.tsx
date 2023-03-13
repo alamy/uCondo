@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
@@ -8,8 +8,8 @@ import { Text, TouchableHighlight, Modal, View, Pressable } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { cadastroDto } from './src/dto/cadastro.dto';
 import { body } from './style';
-import AsyncStorage, {useAsyncStorage } from '@react-native-async-storage/async-storage';
-import RNRestart from 'react-native-restart';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { validadorDTO } from './src/dto/validador.dto';
 
 
 function MyStack() {
@@ -54,11 +54,10 @@ function MyStack() {
   function irParaHome(){
     if(validador){
       setModalVisible(false)
-
       navigation.navigate('Plano de Contas')
+      validadorDTO.valor = 'no'
     }else{
       setModalVisible(false)
-
     }
     
   }
@@ -66,7 +65,7 @@ function MyStack() {
  let icone = icon
   return (
 <> 
-    <Stack.Navigator initialRouteName="Plano de Contas"
+    <Stack.Navigator
       screenOptions={{ headerStyle: { 
           backgroundColor: '#622490',
           borderBottomColor: '#622490'  ,
@@ -85,7 +84,7 @@ function MyStack() {
         options={{
           headerRight: () => (
             <TouchableHighlight 
-            onPress={() => navigation.navigate('Inserir Conta')}
+            onPress={() => navigation.navigate('Inserir Conta', {name: 'Inserir Conta'})}
             >
               <Ionicons name="add-outline" size={32} color="#fff" />
             </TouchableHighlight >

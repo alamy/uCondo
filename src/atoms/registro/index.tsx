@@ -1,8 +1,11 @@
-import { View, Text, TouchableHighlight, Modal, Pressable } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { View, Text, Modal, Pressable } from 'react-native';
+import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { resgitros } from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import Home from '../../../screens/Home';
+import { validadorDTO } from '../../dto/validador.dto';
 
 
 type Resgitro = {
@@ -14,14 +17,15 @@ type Resgitro = {
 
 const Registro = (props: Resgitro) => {
     var [modalVisible, setModalVisible] = useState(false);
-    
+    const navigation = useNavigation();
     function del(){
         setModalVisible(true)
     } 
     async function apagar(){
       await AsyncStorage.removeItem(props.id)
-      console.log('apagou')
+      validadorDTO.valor = 'reload'
       setModalVisible(false)
+      navigation.removeListener
     }
     
     return (

@@ -1,15 +1,11 @@
-import {  View, Text, ScrollView, TextInput, RefreshControl } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import {  View, Text, ScrollView, TextInput } from 'react-native';
+import React, { useEffect, useState, memo } from 'react';
 import { corpo } from './style';
 import Registro from '../../atoms/registro';
-import dbTotal from '../../db/base.json';
-import db from '../../db/db.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
-
-const clear = dbTotal;
+import { validadorDTO } from '../../dto/validador.dto';
 
 export type Teste ={
      key: string
@@ -24,16 +20,15 @@ const Corpo = () => {
 
    async function preeencher() {
         const te:any = []
-        const response = await AsyncStorage.getAllKeys()
+        let response = await AsyncStorage.getAllKeys()
         for(var i = 0; i < response.length; i++) {
             const res =  await AsyncStorage.getItem(response[i])
             const t = JSON.parse(res)
             te.push(t)
             setRegistro(total.length)
-            navigation.navigate('Plano de Contas')
+            navigation.navigate('Plano de Contas', {name: 'alamy'})
         }
-        setTotal(te)
-        
+        setTotal(te) 
     }
 
     function search(){
@@ -54,17 +49,17 @@ const Corpo = () => {
           setTotal(updatedData);
         
     }
-    
 
     /*async function alimentar() {
         for(let e = 0; e < clear.length; e++) {
             await AsyncStorage.setItem(clear[e].codigo, JSON.stringify(clear[e]))
         }
     }*/
+   
     useEffect(() => {
-        RefreshControl
         preeencher()
-      //  alimentar()
+        console.log('aqui')
+      // alimentar()
     },[]);
     
     return (

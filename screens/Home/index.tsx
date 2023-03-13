@@ -1,5 +1,5 @@
 
-import { Button, View, RefreshControl } from 'react-native';
+import { Button, View } from 'react-native';
 import * as React from 'react';
 import Cabecalho from '../../src/component/Cabecalho';
 import { home } from './style';
@@ -10,7 +10,6 @@ import Cadastrar from '../cadastrar';
 
 
 export default function Home() {
-  RefreshControl
   const [fontsLoaded] = useFonts({
     'Roboto': require('../../assets/fonts/Roboto-Regular.ttf'),
   });
