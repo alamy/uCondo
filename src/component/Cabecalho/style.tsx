@@ -17,7 +17,7 @@ export const cabecalho = StyleSheet.create({
       campo: {
         width:'88%',
         alignSelf: 'flex-end',
-        marginTop: '-23px',
+        marginTop: -28,
         height: 40,
       },
       titulo: {
@@ -33,5 +33,4 @@ export const cabecalho = StyleSheet.create({
         marginRight:20,
         marginTop: -25,
       }
-
 })

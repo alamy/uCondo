@@ -4,7 +4,8 @@ export const home = StyleSheet.create({
 
     body: {
         backgroundColor: '#622490',
-        width: '100vw'
+        alignSelf: 'stretch',
+        borderColor: '#622490',
     }
 
 })

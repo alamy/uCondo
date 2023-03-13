@@ -4,13 +4,10 @@ import { StyleSheet } from 'react-native';
 export const formulario = StyleSheet.create({   
     resultado: {
         backgroundColor: '#F0EDF5',
-        with:'100%',
-        borderRadius: 30,
-        height:'100vh',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius:30,
         paddingTop:40,
-    },
-    delete: {
-
+        paddingBottom:5
     },
     titulo: {
         fontSize:15,
@@ -25,6 +22,13 @@ export const formulario = StyleSheet.create({
         borderRadius: 30,
         marginTop:5,
         padding:13
+    },
+    piker: {
+        backgroundColor: '#fff',
+         borderRadius: 30,
+         paddingTop:2,
+         paddingBottom:2,
+         marginTop:5,
     }
 
 })
